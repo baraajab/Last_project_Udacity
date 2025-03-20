@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Plan your trips easily with Travel Planner">
+  <title>app</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-plane-departure"></i> Travel Planner</h1>
+    
+    <div class="components">
+      <div class="inputs">
+        <form id="trip-form">
+          <label for="country">Destination:</label>
+          <input type="text" id="country" name="country" required placeholder="Enter country name">
+          
+          <label for="travel-date">Departure Date:</label>
+          <input type="date" id="travel-date" name="travel-date" required>
+          
+          <label for="return-date">Return Date:</label>
+          <input type="date" id="return-date" name="return-date" required>
+          
+          <button type="submit"><i class="fas fa-search"></i> Get Trip Details</button>
+        </form>
+      </div>
+
+      <div class="outputs">
+        <h3><i class="fas fa-info-circle"></i> Trip Details</h3>
+        
+        <div class="result-card">
+          <p><i class="fas fa-calendar-alt"></i> <strong>Trip Length:</strong> <span id="trip-length"></span></p>
+        </div>
+
+        <div class="result-card">
+          <p><i class="fas fa-hourglass-half"></i> <strong>Trip Countdown:</strong> <span id="trip-countdown"></span></p>
+        </div>
+
+        <div class="result-card">
+          <p><i class="fas fa-cloud-sun"></i> <strong>Weather Forecast:</strong> <span id="weather-forecast"></span></p>
+          <img id="weather-image" src="" alt="Weather">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('Service Worker Registered!', reg))
+          .catch(err => console.log('Service Worker Registration Failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
