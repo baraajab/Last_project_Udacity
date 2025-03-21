@@ -6,20 +6,23 @@
     "start": "webpack serve --config webpack.dev.js --mode development",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server  --config webpack.dev.js",
-    "test": "jest"
+    "test": "jest",
+    "proxy": "http://localhost:8000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "crypto-browserify": "^3.12.1",
     "express": "^4.21.2",
     "os-browserify": "^0.3.0",
-    "path-browserify": "^1.0.1"
+    "path-browserify": "^1.0.1",
+    "workbox-precaching": "^7.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.9",
